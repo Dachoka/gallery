@@ -81,6 +81,13 @@ class ImageTestCase(TestCase):
         self.image_update = Image.objects.get(id = 1)
         self.assertTrue (self.image_update.image, 'images/fisi.jpg')
 
+    def test_delete(self):
+        self.image.save_image()
+        self.image = Image.objects.get(id = 1)
+        self.image.delete_image()
+        images = Image.objects.all()
+        self.assertTrue(len(images)== 0)
+
 
 
 
