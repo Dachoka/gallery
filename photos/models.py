@@ -13,11 +13,16 @@ class Image(models.Model):
     def save_image(self):
         self.save()
 
-    def update_image(self):
-        self.update()
+    def update_image(self, new_image):
+        self.update(image= new_image)
 
     def delete_image(self):
         self.delete()
+
+    @classmethod
+    def get_all_images(cls):
+        images = cls.objects.all()
+        return images
 
     @classmethod
     def filter_by_location(cls,location):
@@ -25,8 +30,9 @@ class Image(models.Model):
         return located_images
 
     @classmethod
-    def search_category(cls, search_category)
-    found_items = cls.objects.filter(category__icontains=search_category)
+    def search_by_category(cls, search_category):
+        found_items = cls.objects.filter(category__icontains=search_category)
+        return found_items
 
     
 
