@@ -20,6 +20,9 @@ class Location(models.Model):
     def save_location(self):
         self.save()
 
+    def update_location(self):
+        self.update()
+
 
 class Category(models.Model):
     category = models.CharField(max_length= 30)
