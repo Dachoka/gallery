@@ -56,3 +56,19 @@ class CategoryTestCase(TestCase):
         categories = Category.objects.all()
         self.assertTrue(len(categories) == 0)
 
+
+class ImageTestCase(TestCase):
+
+    def setUp(self):
+        self.wildlife = Category(category = 'Wildlife')
+        self.wildlife.save_category()
+        self.mandera = Location(location = 'Mandera')
+        self.mandera.save_location()
+
+        self.image = Image( image = 'images/hyena.jpeg', name = 'Hyena', description = 'Fascinating Hyenas', location = self.mandera, category = self.wildlife)
+
+    def test_instance(self):
+        self.assertTrue(isinstance(self.image,Image))
+
+
+
