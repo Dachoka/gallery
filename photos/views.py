@@ -8,7 +8,9 @@ def homepage(request):
     '''
     view function that renders the homepage
     '''
-    return render(request,'homepage.html')
+    all_images = Image.get_all_images()
+
+    return render(request,'homepage.html', {"images":all_images})
 
 def search_category(request):
     if 'category' in request.GET and request.GET["category"]:
