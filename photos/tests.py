@@ -19,7 +19,7 @@ class LocationTestCase(TestCase):
     def test_update_method(self):
         self.nairobi.save_location()
         self.nairobi = Location.objects.filter(location = 'Nairobi').update(location = 'Kisumu')
-        self.location_update = Location.objects.get(location = 'Kisumu')
+        self.location_update = Location.objects.get(id = 1)
         self.assertEqual(self.location_update.location, 'Kisumu')
 
     def test_delete_method(self):
@@ -42,3 +42,10 @@ class CategoryTestCase(TestCase):
         self.fashion.save_category()
         categories = Category.objects.all()
         self.assertTrue(len(categories)>0)
+
+    def test_update_method(self):
+        self.fashion.save_category()
+        self.fashion = Category.objects.filter(category = 'Fashion').update(category = 'Pets')
+        self.category_update = Category.objects.get(id = 1)
+        self.assertEqual(self.category_update.category,'Pets')
+
