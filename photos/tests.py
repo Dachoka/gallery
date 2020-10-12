@@ -25,7 +25,15 @@ class LocationTestCase(TestCase):
     def test_delete_method(self):
         self.nairobi.save_location()
         self.nairobi = Location.objects.get(id = 1)
-        self.location.delete_location()
+        self.nairobi.delete_location()
         locations = Location.objects.all()
         self.assertTrue(len(locations)==0)
 
+
+class CategoryTestCase(TestCase):
+
+    def setUp(self):
+        self.fashion = Category(category = 'Fashion')
+
+    def test_instance(self):
+        self.assertTrue(isinstance(self.fashion, Category))
