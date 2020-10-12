@@ -49,3 +49,10 @@ class CategoryTestCase(TestCase):
         self.category_update = Category.objects.get(id = 1)
         self.assertEqual(self.category_update.category,'Pets')
 
+    def test_delete_method(self):
+        self.fashion.save_category()
+        self.fashion = Category.objects.get(id = 1)
+        self.fashion.delete_category()
+        categories = Category.objects.all()
+        self.assertTrue(len(categories) == 0)
+
