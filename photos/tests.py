@@ -37,3 +37,8 @@ class CategoryTestCase(TestCase):
 
     def test_instance(self):
         self.assertTrue(isinstance(self.fashion, Category))
+
+    def test_save_method(self):
+        self.fashion.save_category()
+        categories = Category.objects.all()
+        self.assertTrue(len(categories)>0)
