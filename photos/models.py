@@ -8,6 +8,7 @@ class Image(models.Model):
     description = models.TextField()
     location = models.ForeignKey('Location',on_delete=models.CASCADE)
     category = models.ForeignKey('Category',on_delete=models.CASCADE)
+    date_taken = models.DateTimeField(auto_now_add=True, null=True)
     
 
 class Location(models.Model):
@@ -15,6 +16,9 @@ class Location(models.Model):
 
     def __str__(self):
         return self.location
+
+    def save_location(self):
+        self.save()
 
 
 class Category(models.Model):
