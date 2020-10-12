@@ -24,6 +24,10 @@ class Image(models.Model):
         located_images = cls.objects.filter(location = location)
         return located_images
 
+    @classmethod
+    def search_category(cls, search_category)
+    found_items = cls.objects.filter(category__icontains=search_category)
+
     
 
 class Location(models.Model):
