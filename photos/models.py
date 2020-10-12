@@ -9,6 +9,9 @@ class Image(models.Model):
     location = models.ForeignKey('Location',on_delete=models.CASCADE)
     category = models.ForeignKey('Category',on_delete=models.CASCADE)
     date_taken = models.DateTimeField(auto_now_add=True, null=True)
+
+    def save_image(self):
+        self.save()
     
 
 class Location(models.Model):
