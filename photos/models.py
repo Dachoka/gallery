@@ -36,7 +36,8 @@ class Category(models.Model):
     def update_category(self):
         self.update()
 
-    
+    def delete_category(self):
+        self.delete()
 
     def __str__(self):
         return self.category
