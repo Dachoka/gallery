@@ -22,3 +22,10 @@ class LocationTestCase(TestCase):
         self.location_update = Location.objects.get(location = 'Kisumu')
         self.assertEqual(self.location_update.location, 'Kisumu')
 
+    def test_delete_method(self):
+        self.nairobi.save_location()
+        self.nairobi = Location.objects.get(id = 1)
+        self.location.delete_location()
+        locations = Location.objects.all()
+        self.assertTrue(len(locations)==0)
+
