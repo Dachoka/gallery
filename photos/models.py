@@ -8,3 +8,10 @@ class Image(models.Model):
     description = models.TextField()
     
 
+class Location(models.Model):
+    location = models.CharField(max_length = 60)
+
+    def __str__(self):
+        return self.location
+
+
