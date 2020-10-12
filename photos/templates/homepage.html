@@ -1,1 +1,46 @@
-<h1>Welcome to Photo Blast</h1>
+{% extends 'base.html' %}
+
+{% block content %}
+<h1 class="text-center">Welcome to Photo Blast</h1>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-3 col-md-4">
+            {% for image in images %}
+            <a type="button" data-toggle="modal" data-target="#myModal">
+                <img style="width: 300px;height: 300px;" src="{{image.image.url}}" class="img-responsive" alt="Image">
+            </a>
+
+            <!-- Modal -->
+            <div id="myModal" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+                
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">{{image.name}}</h4>
+                        </div>
+                        <div class="modal-body">
+                            <img style="width: 600px;height: 300px;" src="{{image.photo.url}}" class="img-responsive" alt="Image">
+                            <h5>{{image.description}}</h5>
+                            <ul>
+                                <li>Category: {{image.category}}</li>
+                                <li>Location: {{image.location}}</li>
+                                <li>Date: {{image.time_taken}}</li>
+                            </ul>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default"> Copy Link</button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}
