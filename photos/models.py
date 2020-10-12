@@ -15,6 +15,10 @@ class Image(models.Model):
 
     def update_image(self):
         self.update()
+
+    def delete_image(self):
+        self.delete()
+
     
 
 class Location(models.Model):
