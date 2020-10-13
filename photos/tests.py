@@ -88,6 +88,15 @@ class ImageTestCase(TestCase):
         images = Image.objects.all()
         self.assertTrue(len(images)== 0)
 
+    def test_search_category_method(self):
+        self.image.save_image()
+        self.category = Category(category = 'Wildlife')
+        self.category.save_category()
+        self.search_results = Image.search_by_category('Wildlife')
+        self.assertTrue(len(self.search_results)>0)
+
+
+
 
 
 
