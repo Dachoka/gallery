@@ -7,7 +7,7 @@ from . import views
 
 
 urlpatterns = [
-    path('',views.homepage, name='home')
+    path('',views.homepage, name='home'),
     path('search/', views.search_category, name = 'search_category')
 ]
 
