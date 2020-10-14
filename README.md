@@ -2,7 +2,7 @@
 This repository contains code for a python web application for viewing and uploading images.
 ## Authored by Machoka Daisy
 ## Description
-This is a website for viewing and uploading images. A user can also search for images based on category or location
+This is a website for viewing and uploading images. A user can also search for images based on category or location. A user can also copy image links to share with others.
 ## Setup instructions
 * Visit https://photoblast190.herokuapp.com/ to interact with the web app
 * Install python
@@ -23,7 +23,8 @@ Open the webpage on your browser using the live link provided (https://photoblas
 * View different images on the homepage
 * Click on an image and a modal will pop up displaying more information about that image
 * Search for a category in the form on the navbar and you will be redirected to a page showing all images in that category
-* Click on the search locations tab in the navbar and enter the location you want in the pop up form, and a filtered list of images will be displayed based on the location you chose.
+* Click on the search locations tab in the navbar and enter the location you want in the pop up form, and a filtered list of images will be displayed based on the location you chose. If you do not enter a location, all images from all locations will be displayed to you.
+* To copy image link, click on the image and then click on the copy link button in the modal that pops up.
 ## Contacts
 Feel free to contact me at machokadaisy25@gmail.com. For any contributions, please visit https://github.com/Dachoka/gallery.git
 ## License
