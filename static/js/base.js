@@ -1,5 +1,7 @@
+document.querySelector("#linkButton").addEventListener("click",copyFunction);
+
 function copyFunction(){
-    var copyLink = document.getElementById("imgLink");
+    var copyLink = document.querySelector("#imgLink");
 
     copyLink.select();
     copyLink.setSelectionRange(0, 99999)

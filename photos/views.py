@@ -26,9 +26,14 @@ def search_category(request):
         return render(request, 'categorysearch.html',{"message":message})
 
 def filter_location(request):
+    if request is None:
+        return Image.objects.none()
     filter_list = Image.objects.all()
     image_filter = ImageFilter(request.GET, queryset = filter_list)
     return render(request, 'location.html', {"filter":image_filter})
+
+def about(request):
+    return render(request, 'about.html')
 
         
 

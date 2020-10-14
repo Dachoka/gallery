@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+    <div class="card" style="border: 3px solid purple; padding: 5px;align-items: center;">
+        <div class="card-body">
+            <h1 class="text-center">Welcome to Photo Blast</h1>
+            <h4 class="text-center" style="font-weight: bolder;">Here are some useful tips to help you enjoy this site more:</h4>
+            <div class="explanation" style="font-size: larger;">
+                <ul>
+                    <li>Click on an image to see more information about that image</li>
+                    <li>Search for images by their category by filling in the 'search category' form on the navbar. Note that available categories are <em>Fashion, Food ,Architecture, Pets and Travel</em></li>
+                    <li>Search for images based on their locations by clicking on the 'Search locations' tab in the navbar and filling in the location you want in the search form.<em><strong>Note that if you do not enter a location, all images from all locations will be displayed to you.</strong></em></li>
+                    <li>To copy an image link to your clipboard, click on the image, then click the copy button in the pop-up</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

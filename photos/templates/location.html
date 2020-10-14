@@ -17,7 +17,7 @@
 
         {% if filter.qs %}
             {% for image in filter.qs %}
-            <div class="col-md-4 col-lg-4">
+            <div class="col-md-4 col-lg-4" style="margin-top: 12px; margin-bottom: 6px;">
                 <a type="button" data-toggle="modal" data-target="#myModal{{image.id}}">
                     <img style="width: 300px;height: 300px;" src="{{image.image.cdn_url}}" class="img-rounded" alt="Image">
                 </a>
@@ -43,7 +43,8 @@
 
                             </div>
                             <div class="modal-footer" style="background-color: #028090;">
-                                <button type="button" class="btn btn-default"> Copy Link</button>
+                                <input id="imgLink" value="{{image.image}}" type="text">
+                                <button type="button" class="btn btn-default" onclick="copyFunction()"> Copy Link</button>
                                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                             </div>
                         </div>

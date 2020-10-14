@@ -6,7 +6,7 @@
 <div class="container">
     <div class="row">
             {% for image in images %}
-            <div class=" col-md-4 col-lg-4" style="margin-top: 12px;">
+            <div class=" col-md-4 col-lg-4" style="margin-top: 12px; margin-bottom: 6px;">
                 <a type="button" data-toggle="modal" data-target="#myModal{{image.id}}">
                     <img style="width: 300px;height: 300px;" src="{{image.image.cdn_url}}" class="img-rounded" alt="Image">
                 </a>
@@ -22,7 +22,7 @@
                                 <h4 class="modal-title">{{image.name}}</h4>
                             </div>
                             <div class="modal-body" style="background-color: #ced4da;color:black; font-weight: bolder;">
-                                <img style="width: 600px;height: 450px;" src="{{image.image.cdn_url}}" class="img-responsive" alt="Image" id="imgLink" >
+                                <img style="width: 600px;height: 450px;" src="{{image.image.cdn_url}}" class="img-responsive" alt="Image" >
                                 <h5><strong>{{image.description}}</strong></h5>
                                 <ul>
                                     <li>Category: {{image.category}}</li>
@@ -32,6 +32,7 @@
 
                             </div>
                             <div class="modal-footer" style="background-color: #028090;">
+                                <input id="imgLink" value="{{image.image}}">
                                 <button type="button" class="btn btn-default" onclick="copyFunction()"> Copy Link</button>
                                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                             </div>

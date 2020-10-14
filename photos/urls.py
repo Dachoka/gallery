@@ -10,7 +10,8 @@ from . import views
 urlpatterns = [
     path('',views.homepage, name='home'),
     path('search/', views.search_category, name = 'search_category'),
-    path('filter/', views.filter_location, name = 'filter_location')
+    path('filter/', views.filter_location, name = 'filter_location'),
+    path('about/', views.about, name = 'about')
 ]
 
 if settings.DEBUG:
