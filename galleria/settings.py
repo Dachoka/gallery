@@ -47,6 +47,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'whitenoise.runserver_nostatic',
     'django.contrib.staticfiles',
+    'pyuploadcare.dj',
+
 ]
 
 MIDDLEWARE = [
@@ -127,6 +129,11 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+UPLOADCARE = {
+    'pub_key' : '64c49f5ce27aa83d36c3',
+    'secret' : 'be632d67c56257272c7a',
+}
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
@@ -147,9 +154,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [
+STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
-]
+)
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

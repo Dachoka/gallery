@@ -1,14 +1,16 @@
 from django.db import models
+from pyuploadcare.dj.models import ImageField
 import datetime as dt
 
 # Create your models here.
 class Image(models.Model):
-    image = models.ImageField(upload_to = 'images/')
+    image = ImageField(blank = True, manual_crop = "")
     name = models.CharField(max_length = 100)
     description = models.TextField()
     location = models.ForeignKey('Location',on_delete=models.CASCADE)
     category = models.ForeignKey('Category',on_delete=models.CASCADE)
     date_taken = models.DateTimeField(auto_now_add=True, null=True)
+
 
     def save_image(self):
         self.save()
