@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'whitenoise.runserver_nostatic',
     'django.contrib.staticfiles',
     'pyuploadcare.dj',
+    'django_filters',
 
 ]
 

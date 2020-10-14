@@ -1,19 +1,30 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1 class="text-center">Welcome to Photo Blast</h1>
-
 <div class="container">
+    <form method="get">
+        {{ filter.form }}
+        <button type="submit">Search</button>
+      </form>
+      <div class="row">
+        {% if filter.qs %}
+            <h2>Found {{filter.qs|length}} from searched location</h2>
+        {% else %}
+            <h2> Found 0 images in the searched location</h2>
+        {% endif %}
+    </div>
     <div class="row">
-            {% for image in images %}
-            <div class=" col-md-4 col-lg-4" style="margin-top: 12px;">
+
+        {% if filter.qs %}
+            {% for image in filter.qs %}
+            <div class="col-md-4 col-lg-4">
                 <a type="button" data-toggle="modal" data-target="#myModal{{image.id}}">
                     <img style="width: 300px;height: 300px;" src="{{image.image.cdn_url}}" class="img-rounded" alt="Image">
                 </a>
 
                 <!-- Modal -->
                 <div id="myModal{{image.id}}" class="modal fade" role="dialog">
-                    <div class="modal-dialog">
+                    <div class="modal-dialog" role="document">
                     
                         <!-- Modal content-->
                         <div class="modal-content">
@@ -22,7 +33,7 @@
                                 <h4 class="modal-title">{{image.name}}</h4>
                             </div>
                             <div class="modal-body" style="background-color: #ced4da;color:black; font-weight: bolder;">
-                                <img style="width: 600px;height: 450px;" src="{{image.image.cdn_url}}" class="img-responsive" alt="Image" id="imgLink" >
+                                <img style="width: 600px;height: 450px;" src="{{image.image.cdn_url}}" class="img-responsive" alt="Image">
                                 <h5><strong>{{image.description}}</strong></h5>
                                 <ul>
                                     <li>Category: {{image.category}}</li>
@@ -32,7 +43,7 @@
 
                             </div>
                             <div class="modal-footer" style="background-color: #028090;">
-                                <button type="button" class="btn btn-default" onclick="copyFunction()"> Copy Link</button>
+                                <button type="button" class="btn btn-default"> Copy Link</button>
                                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                             </div>
                         </div>
@@ -40,8 +51,8 @@
                     </div>
                 </div>
             </div>
-        
             {% endfor %}
+        {% endif %}
     </div>
 </div>
 {% endblock %}
